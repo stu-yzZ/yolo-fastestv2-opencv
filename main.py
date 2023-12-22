@@ -49,7 +49,7 @@ class yolo_fast_v2():
         # lower confidences.
         indices = cv2.dnn.NMSBoxes(boxes, confidences, self.confThreshold, self.nmsThreshold)
         for i in indices:
-            i = i[0]
+            # i = i[0]   #this is a bug，i is a number is not a list
             box = boxes[i]
             left = box[0]
             top = box[1]
